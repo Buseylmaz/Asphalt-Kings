@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class ObstacleMove : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] float obstacleMoveSpeed;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        transform.Translate(Vector3.forward * obstacleMoveSpeed * Time.deltaTime);
     }
 }
