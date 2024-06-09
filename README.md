@@ -6,8 +6,8 @@ Additional features have been added to the project: switching between 4 differen
 ### **Basic Features**
 * Forward Movement and Steering: The player controls the car to move forward and steers it left or right to follow the path.
 * Obstacles: The game features two types of obstacles:
-  Moving Obstacles: These obstacles move along the path, requiring the player to be cautious and avoid them.
-  Static Obstacles: These obstacles are stationary and the player must navigate around them.
+  * Moving Obstacles: These obstacles move along the path, requiring the player to be cautious and avoid them.
+  * Static Obstacles: These obstacles are stationary and the player must navigate around them.
 
 ### **Additional Features**
 The project includes the following additional features:
