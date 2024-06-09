@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMove : MonoBehaviour
 {
+    [Header("Player Speed")]
     [SerializeField] float playerMoveSpeed;
     [SerializeField] float playerRotateSpeed;
+
+
+    public SceneController sceneController;
 
     private void Update()
     {
@@ -35,7 +40,12 @@ public class PlayerMove : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            Debug.Log("Öldü");
+            sceneController.DeadScene();
+        }
+
+        if (collision.gameObject.CompareTag("Finish"))
+        {
+            sceneController.FinishScene();
         }
     }
 }

@@ -4,15 +4,40 @@ using UnityEngine;
 
 public class ChangeCamera : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [Header("Camera Count")]
+    [SerializeField] Camera[] camerasCount;
+
+    [Header("Current Camera")]
+    [SerializeField] int currentCameraIndex = 0;
+
+
     void Start()
     {
-        
+        // Ilk kamerayi etkinlestir, digerlerini devre disi birak
+        for (int i = 0; i < camerasCount.Length; i++)
+        {
+            camerasCount[i].gameObject.SetActive(i == currentCameraIndex);
+        }
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            SwitchCamera();
+        }
+    }
+
+    void SwitchCamera()
+    {
+        // Mevcut kamerayi devre disi birak
+        camerasCount[currentCameraIndex].gameObject.SetActive(false);
+
+        // Bir sonraki kameraya gec
+        currentCameraIndex = (currentCameraIndex + 1) % camerasCount.Length;
+
+        // Yeni kamerayi etkinlestir
+        camerasCount[currentCameraIndex].gameObject.SetActive(true);
     }
 }
